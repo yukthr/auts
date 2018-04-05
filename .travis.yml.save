@@ -12,6 +12,7 @@ script:
   - sudo apt-get install python-pip
   - sudo apt-get install ansible
   - pip install junos-eznc	
-  - python lsdir.py
+  - cd sample_eifj
+  - python *.py
 sudo:
 - required	
