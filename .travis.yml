@@ -1,0 +1,10 @@
+language: python
+python:
+  - "2.7"
+script:
+  - ls -al 	
+  - sudo apt-get install python-pip
+  - sudo apt-get install python-dev 
+  - python template.py
+sudo:
+- required	
