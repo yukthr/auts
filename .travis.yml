@@ -5,6 +5,7 @@ script:
   - ls -al 	
   - sudo apt-get install python-pip
   - sudo apt-get install python-dev 
+  - cd sample_ospf_templating
   - python template.py
 sudo:
 - required	
