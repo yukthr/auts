@@ -12,7 +12,7 @@ script:
   - sudo apt-get install python-pip
   - sudo apt-get install ansible
   - pip install junos-eznc	
-  - cd sample_ospf_templating
-  - python template.py
+  - cd *
+  - python *.py
 sudo:
 - required	
