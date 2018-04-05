@@ -12,6 +12,8 @@ script:
   - sudo apt-get install python-pip
   - sudo apt-get install ansible
   - pip install junos-eznc	
+  - ls 
+  - pwd
   - python lsdir.py
 sudo:
 - required	
