@@ -16,6 +16,7 @@ script:
   - pwd
   - cd sample_ospf*
   - python *.py
+  - cd 
   - cd sample_bgp*
   - python *.py
 sudo:
