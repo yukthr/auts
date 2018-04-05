@@ -1,0 +1,21 @@
+This is a very basic program which introduces anyone to Jinja2 and yaml syntaxing 
+
+
+Problem  - Have two interfaces ge-0/0/0 and ge-0/0/1, we have to use Yaml / Jinja2 and Pyez to develop the 
+	   configurational syntax for this. 
+
+
+
+intf.yml    - will have all the interfaces 
+template.j2 - will have the appropriate Jinja2 
+template.py - will have the python program combining these two
+
+
+#Sample output 
+
+ubuntu@ip-172-31-95-179:~$ python template.py
+
+set protocols ospf area 0 interface ge-0/0/0
+set protocols ospf area 0 interface ge-0/0/1
+
+
