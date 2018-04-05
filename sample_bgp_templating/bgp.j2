@@ -1,0 +1,9 @@
+
+#print "This is automatically rendered"
+
+set routing-options autonomous-system {{bgp.asn}}
+{%- for ip in bgp.neighbor %}
+set protocols bgp group ibgp neighbor {{ip}}
+{%- endfor %}
+
+
