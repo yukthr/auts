@@ -1,6 +1,6 @@
 from jinja2 import Template
 import yaml
-importt sys
+import sys
 
 with open('intf.yml','r') as yamlfile:
 	yaml_data = yaml.load(yamlfile.read())
