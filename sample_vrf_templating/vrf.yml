@@ -1,0 +1,10 @@
+---
+vrf:
+   name:
+      - vrf_1_r1
+      - vrf_2_r2
+   interface:
+      - ge-0/0/1
+      - ge-0/0/2
+   rd: '2:1'
+   rt: 'target:1:1'

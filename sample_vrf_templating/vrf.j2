@@ -1,0 +1,8 @@
+{%- for i in vrf.name %}
+set routing-instances {{i}} route-distinguisher {{ vrf.rd }}
+set routing-instances {{i}} route-target {{vrf.rt}}
+{%- for j in vrf.interface %}
+set routing-instances {{i}} interface {{j}}
+{%- endfor %}
+{%- endfor %}
+
