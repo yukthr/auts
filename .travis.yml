@@ -24,7 +24,7 @@ sudo:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: ccd9a8a98da8a90e2ef37ad6aa1c6252562f4b64
+  github-token: cfb3b62bd7216faf4cb6d845e8c0d74d687c1601
   keep-history: true
   on:
     branch: master	
