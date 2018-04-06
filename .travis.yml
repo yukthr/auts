@@ -19,4 +19,12 @@ script:
   - cd ../sample_bgp* 
   - python *.py
 sudo:
-- required	
+- required
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: klD4Oh3NlO735v8T4MPwww  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  on:
+    branch: master	
