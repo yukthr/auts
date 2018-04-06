@@ -24,7 +24,7 @@ sudo:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: klD4Oh3NlO735v8T4MPwww  # Set in travis-ci.org dashboard, marked secure
+  github-token: ccd9a8a98da8a90e2ef37ad6aa1c6252562f4b64  # Set in travis-ci.org dashboard, marked secure
   keep-history: true
   on:
     branch: master	
