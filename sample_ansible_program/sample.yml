@@ -1,0 +1,19 @@
+---
+  - name: print_facts
+    hosts: mx
+    roles:
+     - Juniper.junos
+    connection: local
+    gather_facts: no
+  
+    tasks:  
+      - name: Get Junos info
+        junos_get_facts:
+          port=830
+          host={{ inventory_hostname }}
+          user=lab
+          passwd=lab123
+        register: junos
+      
+      - name: Display Junos Facts
+        debug: msg="{{junos.facts}}"
