@@ -1,0 +1,104 @@
+
+PLAY [print_facts] *****************************************************************************************
+
+TASK [Get Junos info] **************************************************************************************
+ok: [192.168.0.91]
+
+TASK [Display Junos Facts] *********************************************************************************
+ok: [192.168.0.91] => {
+    "msg": {
+        "HOME": "/var/home/lab", 
+        "RE0": {
+            "last_reboot_reason": "Router rebooted after a normal shutdown.", 
+            "mastership_state": "master", 
+            "model": "RE-VMX", 
+            "status": "OK", 
+            "up_time": "4 hours, 44 minutes, 14 seconds"
+        }, 
+        "RE1": null, 
+        "RE_hw_mi": false, 
+        "current_re": [
+            "re0", 
+            "master", 
+            "node", 
+            "fwdd", 
+            "member", 
+            "pfem"
+        ], 
+        "domain": null, 
+        "fqdn": "vMX-1", 
+        "has_2RE": false, 
+        "hostname": "vMX-1", 
+        "hostname_info": {
+            "re0": "vMX-1"
+        }, 
+        "ifd_style": "CLASSIC", 
+        "junos_info": {
+            "re0": {
+                "object": {
+                    "build": 8, 
+                    "major": [
+                        16, 
+                        2
+                    ], 
+                    "minor": "2", 
+                    "type": "R"
+                }, 
+                "text": "16.2R2.8"
+            }
+        }, 
+        "master": "RE0", 
+        "master_state": true, 
+        "model": "VMX", 
+        "model_info": {
+            "re0": "VMX"
+        }, 
+        "personality": "MX", 
+        "re_info": {
+            "default": {
+                "0": {
+                    "last_reboot_reason": "Router rebooted after a normal shutdown.", 
+                    "mastership_state": "master", 
+                    "model": "RE-VMX", 
+                    "status": "OK"
+                }, 
+                "default": {
+                    "last_reboot_reason": "Router rebooted after a normal shutdown.", 
+                    "mastership_state": "master", 
+                    "model": "RE-VMX", 
+                    "status": "OK"
+                }
+            }
+        }, 
+        "re_master": {
+            "default": "0"
+        }, 
+        "re_name": "re0", 
+        "serialnumber": "VM5A3692B618", 
+        "srx_cluster": null, 
+        "srx_cluster_id": null, 
+        "srx_cluster_redundancy_group": null, 
+        "switch_style": "BRIDGE_DOMAIN", 
+        "vc_capable": false, 
+        "vc_fabric": null, 
+        "vc_master": null, 
+        "vc_mode": null, 
+        "version": "16.2R2.8", 
+        "version_RE0": "16.2R2.8", 
+        "version_RE1": null, 
+        "version_info": {
+            "build": 8, 
+            "major": [
+                16, 
+                2
+            ], 
+            "minor": "2", 
+            "type": "R"
+        }, 
+        "virtual": true
+    }
+}
+
+PLAY RECAP *************************************************************************************************
+192.168.0.91               : ok=2    changed=0    unreachable=0    failed=0   
+
