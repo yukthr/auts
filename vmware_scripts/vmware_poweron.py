@@ -1,4 +1,4 @@
-#Pogram to Power-on VMware Instances 
+#Prrgram to Power-on VMware Instances 
 
 import os # Importing to execute system wide commands
 import time # Importing this as there is a sleep task

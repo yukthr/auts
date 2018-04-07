@@ -1,4 +1,4 @@
-#Pogram to Power-off VMware Instances 
+#Program to Power-off VMware Instances 
 
 import os # Importing to execute system wide commands
 import time # Importing this as there is a sleep task
