@@ -1,4 +1,4 @@
-#Thiss program extracts version from the list of Devices and checks if it is great than 15.1
+#This program extracts version from the list of Devices and checks if it is great than 15.1
 from jnpr.junos import Device as d #import Device Module for connectivity for ease
 import re #To import search functions module 
 import logging #Just to indicate warning when not connected to device. 
