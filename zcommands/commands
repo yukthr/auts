@@ -1,3 +1,5 @@
+Some frequent commands that i frequently forget ;) 
+
 # To replace a word via sed 
 sed s/from/for/g <filname> will replace the word from with for 
 
