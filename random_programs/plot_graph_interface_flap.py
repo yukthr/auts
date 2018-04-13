@@ -45,7 +45,6 @@ Apr  16 12:41:18  vMX-2 mib2d[4086]: SNMP_TRAP_LINK_DOWN: ifIndex 550, ifAdminSt
 # Below code would declare an empty list, basically am analyzing the day, you can extend it to the point where you can start with hour as well.
 
 list_of_dates_flapped = []
-lstr = collected_from_logs.strip()
 
 for line in cStringIO.StringIO(collected_from_logs.strip()): #cStringIO.cStringIO is an intresting function and made my life easier to convert string to list
     print line.split()
