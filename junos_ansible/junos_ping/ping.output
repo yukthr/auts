@@ -1,0 +1,40 @@
+
+PLAY [Examples of juniper_junos_ping] **********************************************************************
+
+TASK [Test Ping to another devices from vmx] ***************************************************************
+ok: [192.168.0.91]
+
+TASK [junos-ping] ******************************************************************************************
+ok: [192.168.0.91] => {
+    "junos": {
+        "acceptable_percent_loss": "0", 
+        "changed": false, 
+        "count": "5", 
+        "dest": "192.168.0.29", 
+        "dest_ip": "192.168.0.29", 
+        "do_not_fragment": false, 
+        "failed": false, 
+        "host": "192.168.0.29", 
+        "interface": null, 
+        "msg": "Loss 0%, (Sent 5 | Received 5)", 
+        "packet_loss": "0", 
+        "packets_received": "5", 
+        "packets_sent": "5", 
+        "rapid": true, 
+        "routing_instance": null, 
+        "rtt_average": "184", 
+        "rtt_maximum": "228", 
+        "rtt_minimum": "155", 
+        "rtt_stddev": "29", 
+        "size": null, 
+        "source": null, 
+        "source_ip": null, 
+        "state": "absent", 
+        "timeout": "30", 
+        "ttl": null
+    }
+}
+
+PLAY RECAP *************************************************************************************************
+192.168.0.91               : ok=2    changed=0    unreachable=0    failed=0   
+

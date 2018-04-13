@@ -1,0 +1,15 @@
+--- 
+- 
+  connection: local
+  gather_facts: false
+  hosts: mx
+  name: "Examples of juniper_junos_ping"
+  roles: 
+    - Juniper.junos
+  tasks: 
+    - 
+      juniper_junos_ping: "host={{ inventory_hostname }} port=830 username=lab passwd=lab123 dest_ip=192.168.0.29"
+      name: "Test Ping to another devices from vmx"
+      register: junos
+    - debug: var=junos
+      name: junos-ping 
