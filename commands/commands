@@ -1,0 +1,20 @@
+# To replace a word via sed 
+sed s/from/for/g <filname> will replace the word from with for 
+
+-------
+#Esxi 
+
+1. List the inventory ID of the virtual machine with the command:
+vim-cmd vmsvc/getallvms |grep <vm name>
+Note: The first column of the output shows the vmid.
+
+2. Check the power state of the virtual machine with the command:
+vim-cmd vmsvc/power.getstate <vmid>
+
+3. Power-on the virtual machine with the command:
+vim-cmd vmsvc/power.on <vmid> 
+---------
+
+#GIT 
+
+$ git config credential.helper store
