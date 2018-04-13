@@ -1,0 +1,21 @@
+--- 
+- 
+  connection: local
+  gather_facts: false
+  hosts: mx
+  name: "Examples of juniper_junos_ping"
+  roles: 
+    - Juniper.junos
+  tasks:
+    - name: show version 
+      juniper_junos_command:
+        format: json
+        commands:
+          - show version 
+        host: "{{ inventory_hostname }}"
+        username: lab
+        password: lab123
+        port: 830
+      register: version
+    - name: print version
+      debug: var=version.stdout_lines       	 
