@@ -1,0 +1,12 @@
+
+PLAY [This is to do a simple commit check! operation on Device] ********************************************
+
+TASK [commit check] ****************************************************************************************
+fatal: [192.168.0.91]: FAILED! => {"changed": false, "msg": "Unable to open the configuration in exclusive mode: LockError(severity: error, bad_element: None, message: configuration database modified)"}
+ok: [192.168.0.92]
+	to retry, use: --limit @/home/r/ww/auts/junos_ansible/ansible_junos_config/junos_commit_check/commit_check.retry
+
+PLAY RECAP *************************************************************************************************
+192.168.0.91               : ok=0    changed=0    unreachable=0    failed=1   
+192.168.0.92               : ok=1    changed=0    unreachable=0    failed=0   
+
