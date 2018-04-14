@@ -1,0 +1,36 @@
+
+set version 16.2R2.8
+set system host-name vMX-2
+set system root-authentication encrypted-password "$5$iBEBRAj5$7cJsubUgaVzauLx1V5W2QzJ2G2TOhsbdIRFOQAgQhW/"
+set system scripts op file show_interface.slax
+set system login user lab uid 2000
+set system login user lab class super-user
+set system login user lab authentication encrypted-password "$5$9qGmqqus$4fFc5hW6gmvg4VI6vFQwfff9fSJ3/g92AyS0b03w8t5"
+set system services ssh
+set system services telnet
+set system services netconf ssh
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set chassis aggregated-devices ethernet device-count 2
+set chassis fpc 0 pic 0 tunnel-services bandwidth 1g
+set chassis fpc 0 pic 0 interface-type xe
+set chassis fpc 0 lite-mode
+set interfaces xe-0/0/4 gigether-options 802.3ad ae1
+set interfaces xe-0/0/5 gigether-options 802.3ad ae1
+set interfaces ae0 disable
+set interfaces ae1 aggregated-ether-options lacp active
+set interfaces ae1 aggregated-ether-options lacp system-id 00:00:00:00:00:04
+set interfaces ae1 unit 0 family bridge interface-mode trunk
+set interfaces ae1 unit 0 family bridge vlan-id-list 100
+set interfaces fxp0 description "MGMT INTERFACAE - DO NOT DELETE"
+set interfaces fxp0 unit 0 family inet address 192.168.0.92/24
+set interfaces irb unit 100 family inet address 100.0.0.100/24 arp 100.0.0.1 l2-interface ae1.0
+set interfaces irb unit 100 family inet address 100.0.0.100/24 arp 100.0.0.1 mac 00:01:02:03:04:01
+set interfaces irb unit 100 family inet address 100.0.0.100/24 arp 100.0.0.1 publish
+set interfaces irb unit 100 mac 00:01:02:03:04:03
+set interfaces lo0 unit 0 family inet address 2.2.2.2/32
+set routing-options autonomous-system 100
+set protocols ospf area 0.0.0.0 interface fxp0.0
+set bridge-domains bd100 vlan-id 100
+set bridge-domains bd100 routing-interface irb.100

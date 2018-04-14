@@ -1,0 +1,15 @@
+--- 
+- 
+  connection: local
+  gather_facts: false
+  hosts: mx
+  name: "Get and store config from Devices in set format"
+  roles: 
+    - Juniper.junos
+  tasks: 
+    - 
+      juniper_junos_config: "host={{ inventory_hostname }} port=830 username=lab passwd=lab123 dest={{ inventory_hostname }} retrieve=committed format=set"
+      name: "Get the commited configuration in set format"
+      register: junos
+    - debug: var=junos.config_parsed
+      name: "Get the config"

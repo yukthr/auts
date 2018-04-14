@@ -1,0 +1,117 @@
+
+PLAY [Get and store config from Devices in set format] ************************************************************************
+
+TASK [Get the commited configuration in set format] ***************************************************************************
+ok: [192.168.0.92]
+ok: [192.168.0.91]
+
+TASK [Get the config] *********************************************************************************************************
+ok: [192.168.0.91] => {
+    "junos.config_parsed": [
+        "", 
+        "set version 16.2R2.8", 
+        "set system host-name vMX-1", 
+        "set system root-authentication encrypted-password \"$5$iBEBRAj5$7cJsubUgaVzauLx1V5W2QzJ2G2TOhsbdIRFOQAgQhW/\"", 
+        "set system scripts op file check.slax", 
+        "set system scripts op file description.slax", 
+        "set system scripts op file show_interface.slax", 
+        "set system login user lab uid 2000", 
+        "set system login user lab class super-user", 
+        "set system login user lab authentication encrypted-password \"$6$r0gGBtv8$tVl3Tj/PPnTXMPPximLayUCAf6EO1Xib/MExLKJBL62lzIKkBV4hUUIZF0toe6COaB5DUXjsoSnCLWRBTMHlW.\"", 
+        "set system services ssh", 
+        "set system services telnet", 
+        "set system services netconf ssh", 
+        "set system syslog file messages any notice", 
+        "set system syslog file messages authorization info", 
+        "set system syslog file interactive-commands interactive-commands any", 
+        "set chassis aggregated-devices ethernet device-count 3", 
+        "set chassis fpc 0 pic 0 tunnel-services bandwidth 1g", 
+        "set chassis fpc 0 pic 0 interface-type xe", 
+        "set chassis fpc 0 lite-mode", 
+        "set interfaces xe-0/0/3 gigether-options 802.3ad ae0", 
+        "set interfaces xe-0/0/4 gigether-options 802.3ad ae1", 
+        "set interfaces ae0 aggregated-ether-options lacp active", 
+        "set interfaces ae0 aggregated-ether-options lacp system-id 00:00:00:00:00:01", 
+        "set interfaces ae0 unit 0 family bridge interface-mode trunk", 
+        "set interfaces ae0 unit 0 family bridge vlan-id-list 100", 
+        "set interfaces ae1 aggregated-ether-options lacp active", 
+        "set interfaces ae1 aggregated-ether-options lacp system-id 00:00:00:00:00:03", 
+        "set interfaces ae1 aggregated-ether-options lacp admin-key 1", 
+        "set interfaces ae1 aggregated-ether-options mc-ae mc-ae-id 1", 
+        "set interfaces ae1 aggregated-ether-options mc-ae redundancy-group 1", 
+        "set interfaces ae1 aggregated-ether-options mc-ae chassis-id 0", 
+        "set interfaces ae1 aggregated-ether-options mc-ae mode active-standby", 
+        "set interfaces ae1 aggregated-ether-options mc-ae status-control active", 
+        "set interfaces ae1 unit 0 family bridge interface-mode trunk", 
+        "set interfaces ae1 unit 0 family bridge vlan-id-list 100", 
+        "set interfaces fxp0 description \"MGMT ADDRESS - DO NOT DELETE\"", 
+        "set interfaces fxp0 unit 0 family inet address 192.168.0.91/24", 
+        "set interfaces irb unit 100 family inet address 100.0.0.1/24 arp 100.0.0.100 l2-interface ae1.0", 
+        "set interfaces irb unit 100 family inet address 100.0.0.1/24 arp 100.0.0.100 mac 00:01:02:03:04:03", 
+        "set interfaces irb unit 100 family inet address 100.0.0.1/24 arp 100.0.0.100 publish", 
+        "set interfaces irb unit 100 mac 00:01:02:03:04:01", 
+        "set interfaces lo0 unit 0 family inet address 1.1.1.1/32", 
+        "set multi-chassis multi-chassis-protection 100.0.0.2 interface ae0", 
+        "set routing-options static route 4.0.0.0/24 reject", 
+        "set routing-options static route 4.0.1.0/24 reject", 
+        "set routing-options static route 4.0.2.0/24 reject", 
+        "set routing-options static route 4.0.3.0/24 reject", 
+        "set routing-options autonomous-system 100", 
+        "set protocols ospf export ospf-static", 
+        "set protocols ospf area 0.0.0.0 interface fxp0.0", 
+        "set protocols iccp local-ip-addr 100.0.0.1", 
+        "set protocols iccp peer 100.0.0.2 redundancy-group-id-list 1", 
+        "set protocols iccp peer 100.0.0.2 liveness-detection minimum-interval 3000", 
+        "set protocols iccp peer 100.0.0.2 liveness-detection multiplier 3", 
+        "set policy-options policy-statement ospf-static term 1 from protocol static", 
+        "set policy-options policy-statement ospf-static term 1 then accept", 
+        "set bridge-domains bd100 vlan-id 100", 
+        "set bridge-domains bd100 routing-interface irb.100", 
+        "set switch-options service-id 1"
+    ]
+}
+ok: [192.168.0.92] => {
+    "junos.config_parsed": [
+        "", 
+        "set version 16.2R2.8", 
+        "set system host-name vMX-2", 
+        "set system root-authentication encrypted-password \"$5$iBEBRAj5$7cJsubUgaVzauLx1V5W2QzJ2G2TOhsbdIRFOQAgQhW/\"", 
+        "set system scripts op file show_interface.slax", 
+        "set system login user lab uid 2000", 
+        "set system login user lab class super-user", 
+        "set system login user lab authentication encrypted-password \"$5$9qGmqqus$4fFc5hW6gmvg4VI6vFQwfff9fSJ3/g92AyS0b03w8t5\"", 
+        "set system services ssh", 
+        "set system services telnet", 
+        "set system services netconf ssh", 
+        "set system syslog file messages any notice", 
+        "set system syslog file messages authorization info", 
+        "set system syslog file interactive-commands interactive-commands any", 
+        "set chassis aggregated-devices ethernet device-count 2", 
+        "set chassis fpc 0 pic 0 tunnel-services bandwidth 1g", 
+        "set chassis fpc 0 pic 0 interface-type xe", 
+        "set chassis fpc 0 lite-mode", 
+        "set interfaces xe-0/0/4 gigether-options 802.3ad ae1", 
+        "set interfaces xe-0/0/5 gigether-options 802.3ad ae1", 
+        "set interfaces ae0 disable", 
+        "set interfaces ae1 aggregated-ether-options lacp active", 
+        "set interfaces ae1 aggregated-ether-options lacp system-id 00:00:00:00:00:04", 
+        "set interfaces ae1 unit 0 family bridge interface-mode trunk", 
+        "set interfaces ae1 unit 0 family bridge vlan-id-list 100", 
+        "set interfaces fxp0 description \"MGMT INTERFACAE - DO NOT DELETE\"", 
+        "set interfaces fxp0 unit 0 family inet address 192.168.0.92/24", 
+        "set interfaces irb unit 100 family inet address 100.0.0.100/24 arp 100.0.0.1 l2-interface ae1.0", 
+        "set interfaces irb unit 100 family inet address 100.0.0.100/24 arp 100.0.0.1 mac 00:01:02:03:04:01", 
+        "set interfaces irb unit 100 family inet address 100.0.0.100/24 arp 100.0.0.1 publish", 
+        "set interfaces irb unit 100 mac 00:01:02:03:04:03", 
+        "set interfaces lo0 unit 0 family inet address 2.2.2.2/32", 
+        "set routing-options autonomous-system 100", 
+        "set protocols ospf area 0.0.0.0 interface fxp0.0", 
+        "set bridge-domains bd100 vlan-id 100", 
+        "set bridge-domains bd100 routing-interface irb.100"
+    ]
+}
+
+PLAY RECAP ********************************************************************************************************************
+192.168.0.91               : ok=2    changed=0    unreachable=0    failed=0   
+192.168.0.92               : ok=2    changed=0    unreachable=0    failed=0   
+
