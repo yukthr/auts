@@ -16,6 +16,7 @@
         username='lab'
         password='lab123'
         output=text
+        dest={{ inventory_hostname }}.txt
       register: junos
     - 
       name: Print stdout_lines from xml.rpc
