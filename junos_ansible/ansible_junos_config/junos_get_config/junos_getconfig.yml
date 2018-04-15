@@ -8,7 +8,7 @@
     - Juniper.junos
   tasks: 
     - 
-      juniper_junos_config: "host={{ inventory_hostname }} port=830 username=lab passwd=lab123 dest={{ inventory_hostname }} retrieve=committed format=set"
+      juniper_junos_config: " port=830 username=lab passwd=lab123 dest={{ inventory_hostname }} retrieve=committed format=set"
       name: "Get the commited configuration in set format"
       register: junos
     - debug: var=junos.config_parsed
