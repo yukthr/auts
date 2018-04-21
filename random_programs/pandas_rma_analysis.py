@@ -98,7 +98,7 @@ DC
 
 """
 
-#It becomes extremely easy when you have pandas and numpy covert data for analaysis vs regurlar list and looping through the list 
+#It becomes extremely easy when you have pandas and numpy covert data for analaysis vs regular list and looping through the list 
 
         
 
