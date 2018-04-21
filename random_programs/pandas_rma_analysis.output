@@ -1,0 +1,17 @@
+    DC Devices    LC RMA_Status
+0    1      r1  abcx        yes
+3    6      r4  abcd        yes
+4    4      r5  abcz        yes
+6    7      r5  abcn        yes
+7    1      r1  abcx        yes
+10   6      r4  abcd        yes
+11   4      r5  abcz        yes
+14   1      r1  abcx        yes
+17   6      r4  abcd        yes
+20   7      r5  abcn        yes
+21   1      r1  abcx        yes
+23   2      r3  abcb        yes
+24   6      r4  abcd        yes
+27   7      r5  abcn        yes
+31   6      r4  abcd        yes
+34   7      r5  abcn        yes
