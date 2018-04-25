@@ -41,6 +41,6 @@ sudo timedatectl set-timezone UTC
 list all timezones:
 
 timedatectl list-timezones
-
+sudo dpkg-reconfigure tzdata
 
 
