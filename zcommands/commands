@@ -20,3 +20,27 @@ vim-cmd vmsvc/power.on <vmid>
 #GIT 
 
 $ git config credential.helper store
+
+#Editing timezones
+
+
+Use timedatectl
+
+sudo timedatectl set-timezone <timeszone>
+
+The best part - it's not interactive as dpkg-reconfigure tzdata
+
+set timezone as EST:
+
+sudo timedatectl set-timezone EST
+
+set timezone as UTC:
+
+sudo timedatectl set-timezone UTC
+
+list all timezones:
+
+timedatectl list-timezones
+
+
+
