@@ -43,4 +43,7 @@ list all timezones:
 timedatectl list-timezones
 sudo dpkg-reconfigure tzdata
 
+#Adding wget on mac 
+
+brew install wget --with-libressl
 
