@@ -13,4 +13,9 @@
         register: junos
       -
         debug:
-          var=junos
+          var: "{{ item.value }}"
+        with_items:
+          - value: junos.packet_loss 
+          - value: junos.size
+          - value: junos.msg
+          - value: junos.do_not_fragment 
