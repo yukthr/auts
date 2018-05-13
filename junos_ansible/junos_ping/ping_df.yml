@@ -1,0 +1,16 @@
+---
+  -
+    connection: local
+    gather_facts: false
+    hosts: mx
+    name: "Example of Junos ping with df"
+    roles:
+      - Juniper.junos
+    tasks:
+      - 
+        name: "Juniper Junos ping with df"
+        juniper_junos_ping: "host={{ inventory_hostname }} port=830 username=lab passwd=lab123 dest=192.168.48.128 count=10 do_not_fragment=yes size=500"
+        register: junos
+      -
+        debug:
+          var=junos

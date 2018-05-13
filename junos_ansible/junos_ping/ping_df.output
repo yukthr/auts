@@ -1,0 +1,40 @@
+
+PLAY [Example of Junos ping with df] ******************************************************************************
+
+TASK [Juniper Junos ping with df] *********************************************************************************
+ok: [192.168.48.91]
+
+TASK [debug] ******************************************************************************************************
+ok: [192.168.48.91] => {
+    "junos": {
+        "acceptable_percent_loss": "0", 
+        "changed": false, 
+        "count": "10", 
+        "dest": "192.168.48.128", 
+        "dest_ip": "192.168.48.128", 
+        "do_not_fragment": true, 
+        "failed": false, 
+        "host": "192.168.48.128", 
+        "interface": null, 
+        "msg": "Loss 0%, (Sent 10 | Received 10)", 
+        "packet_loss": "0", 
+        "packets_received": "10", 
+        "packets_sent": "10", 
+        "rapid": true, 
+        "routing_instance": null, 
+        "rtt_average": "4657", 
+        "rtt_maximum": "11434", 
+        "rtt_minimum": "2624", 
+        "rtt_stddev": "2534", 
+        "size": "500", 
+        "source": null, 
+        "source_ip": null, 
+        "state": "absent", 
+        "timeout": "30", 
+        "ttl": null
+    }
+}
+
+PLAY RECAP ********************************************************************************************************
+192.168.48.91              : ok=2    changed=0    unreachable=0    failed=0   
+
