@@ -2,7 +2,7 @@
 from jnpr.junos import Device as d
 from jnpr.junos.op.arp import ArpTable as at #This get the arp table
 
-dev = d(host="192.168.0.92",user='lab',passwd='lab123')
+dev = d(host="192.168.48.91",user='lab',passwd='lab123')
 dev.open()
 
 arp_list = at(dev).get() # at is the short form of ArpTable at the top
