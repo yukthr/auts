@@ -1,0 +1,8 @@
+Available Functions
+-------------------
+['__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_decode_dir', '_decode_file', '_decode_storage_cleanup', '_dev', '_ssh_exec', 'cat', 'checksum', 'cp', 'cwd', 'dev', 'directory_usage', 'ls', 'mkdir', 'mv', 'pwd', 'rm', 'rmdir', 'rpc', 'stat', 'storage_cleanup', 'storage_cleanup_check', 'storage_usage', 'symlink', 'tgz']
+-------------------
+directory usage on /var/tmp
+{'/var/tmp': {'bytes': 16384, 'blocks': 32, 'size': '16K'}}
+
+
