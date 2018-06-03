@@ -47,3 +47,17 @@ sudo dpkg-reconfigure tzdata
 
 brew install wget --with-libressl
 
+
+# Mac Air was refusing SSH, did this to enable 
+
+sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+
+(Supply your password when it is requested) and then
+
+Code:
+
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+
+
+
+
