@@ -59,5 +59,33 @@ Code:
 sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 
 
+#Rsync 
+
+-> To do successful rsync -> first you need to have seam-less ssh access -> ssh-copy-id will help there 
+-> rsync -azP <remote> <local> will copy all the files from remote to local 
+-> rsync -azP <local> <remote> will copy all files from local to remote 
+
+Idea is to have a cron running to do the checksum, if differs start a rsync from pictures folder to our Media serve
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
