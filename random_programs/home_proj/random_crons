@@ -1,0 +1,4 @@
+XDG_RUNTIME_DIR=/run/user/0
+XDG_RUNTIME_DIR=/run/user/1000
+@reboot sleep 60 && /home/pi/bconnect.sh &
+@reboot sleep 90 && sh /home/pi/start-picture-frame.sh &
