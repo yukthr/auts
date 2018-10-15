@@ -1,0 +1,66 @@
+cheat sheet - raspberry pi - usb drive 
+
+
+
+-> To mount 
+
+sudo mkdir /mnt/usbdrive
+sudo mount /dev/sda1 /mnt/usbdrive
+ls /mnt/usbdrive
+
+-> To list your file systems:
+
+
+sudo fdisk -l
+sudo mount -l
+df -h
+
+
+Before disconnecting a USB drive:
+
+
+sudo umount /dev/sda1
+Format a drive to Linux EXT4
+
+
+sudo mkfs.ext4 /dev/sda1 -L untitled
+Add Apple OS X HFS+ read/write support
+
+
+sudo apt-get install hfsutils hfsprogs hfsutils
+Format a drive to HFS+
+
+
+sudo mkfs.hfsplus /dev/sda1 -v untitled
+Add Windows NTFS read/write support
+
+
+sudo apt-get install ntfs-3g
+Format a drive to NTFS
+
+
+sudo mkfs.ntfs /dev/sda1 -f -v -I -L untitled
+Add Windows/DOS FAT32 read/write support
+
+
+sudo apt-get install dosfstools
+Format a drive to FAT32
+
+
+sudo mkfs.vfat /dev/sda1 -n untitled
+
+
+---
+
+Mount a VFAT format USB drive so that user 'pi' can write to it:
+
+
+sudo mount -o uid=pi,gid=pi /dev/sda1 /mnt/usbdrive
+If your USB drive has 'ext4' format, the above command will not work: EXT4-fs (sda1): Unrecognized mount option "uid=1000" or missing value
+
+To mount a EXT4 format USB drive so that user 'pi' can write to it:
+
+
+sudo mount /dev/sda1 /mnt/usbdrive
+sudo chown pi:pi /mnt/usbdrive
+sudo chmod 777 /mnt/usbdrive
