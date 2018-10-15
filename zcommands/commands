@@ -68,7 +68,8 @@ sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 Idea is to have a cron running to do the checksum, if differs start a rsync from pictures folder to our Media serve
 
 
-
+#To replace a text in all files with another using sed 
+-> sed -i 's/omxplayer/omxplayer -o local/g' *.py
 
 
 
