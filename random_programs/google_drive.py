@@ -27,7 +27,7 @@ if not items:
 else:
     print('Files:')
     for item in items:
-        ps = re.compile(r'^(\d)')
+        ps = re.compile(r'^(\d)')# This helps in listing out only files starting with number.
         if ps.findall(item['name']):
             files_to_delete.append(item['id'])
             files_to_delete_names.append(item['name'])
