@@ -1,3 +1,4 @@
+#Blog post @https://r2079.wordpress.com/2018/11/28/python-pandas-reading-text-files-got-a-lot-better/
 
 # The goal of this program is to analyze the output.txt and get a list of vms which are currently powered on for my later use-case
 
