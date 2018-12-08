@@ -1,0 +1,20 @@
+---
+-
+  connection: local
+  gather_facts: false
+  hosts: mx
+  name: "This is to do a simple commit check! operation on Device"
+  roles:
+    - Juniper.junos
+  tasks:
+    -
+      name: "commit check"
+      juniper_junos_config:
+        host={{ inventory_hostname }}
+        username=lab
+        passwd=lab123
+        port=830
+        load='set'
+        src='hostname.conf'
+        confirmed=6
+      register: junos
