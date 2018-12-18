@@ -1,0 +1,47 @@
+#This script helps to get TOP 5 process and CPU utilization from the output of the TOP Command.
+
+import pandas as pd
+from collections import Counter
+
+import csv
+
+#Read the text file
+
+text_read = pd.read_fwf('output_top.txt')
+
+#Covert to Csv
+
+text_read.to_csv('output_top.csv')
+
+pd_readfile = pd.read_csv('output_top.csv',header=None)
+
+# print(pd_readfile)
+
+pd_sort = pd_readfile[3:].sort_values(by=[3], ascending=False) # CPU Counter is in 4th Coloumn and we are sorting on Descending Value
+
+#Top 5 process will be
+
+pd_top5 = pd_sort[0:4]
+
+for i,j in zip(pd_top5[2],pd_top5[3]):
+     print("Process Name : {} and CPU Util : {}".format(i,j))
+
+# Top Talkers
+
+pd_toptalker = Counter(pd_sort[2]).most_common(5)
+
+print("\n Top Talkers : {}".format(pd_toptalker))
+
+
+
+"""
+output 
+Process Name : Google Chrome and CPU Util : 8.7
+Process Name : kernel_task and CPU Util : 7.4
+Process Name : WindowServer and CPU Util : 7.3
+Process Name : hidd and CPU Util : 5.5
+
+ Top Talkers : [('Google Chrome He', 30), ('MTLCompilerServi', 18), ('mdworker', 9), ('iTerm2', 6), ('distnoted', 6)]
+
+
+"""
