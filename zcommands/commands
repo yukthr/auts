@@ -74,6 +74,8 @@ Idea is to have a cron running to do the checksum, if differs start a rsync from
 # This will create hugepages in ubuntu server - required for vmx docker installation 
 
 sudo sysctl -w vm.nr_hugepages=1028
+sudo PWD="/home/markd/dev/simplenote-electron" docker-compose up install 
+@Known issue with Docker, most of hostnames are single letter r and hence creating a home directory in docker was impossible and was throwing error, created a new directory and pointed that to this
 
 
 
