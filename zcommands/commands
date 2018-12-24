@@ -71,7 +71,9 @@ Idea is to have a cron running to do the checksum, if differs start a rsync from
 #To replace a text in all files with another using sed 
 -> sed -i 's/omxplayer/omxplayer -o local/g' *.py
 
+# This will create hugepages in ubuntu server - required for vmx docker installation 
 
+sudo sysctl -w vm.nr_hugepages=1028
 
 
 
