@@ -1,4 +1,4 @@
-# script to remove the inactive docker images
+# script to remove the inactive docker runtimes
 
 import os
 import logging 

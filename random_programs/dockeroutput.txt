@@ -1,1 +1,2 @@
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+1f325f809f41        juniper/pyez        "/bin/sh"           33 seconds ago      Exited (1) 17 seconds ago                       affectionate_ptolemy
