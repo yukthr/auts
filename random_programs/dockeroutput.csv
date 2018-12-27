@@ -1,2 +1,5 @@
-,CONTAINER ID,IMAGE,COMMAND,CREATED,Unnamed: 4,STATUS,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,PORTS,NAMES
-0,1f325f809f41,juniper/pyez,"""/bin/sh""",33 seconds,ago,Exited,(1),17,seconds,ago,,affectionate_ptolemy
+,CONTAINER ID,IMAGE,COMMAND,CREATED,Unnamed: 4,STATUS,Unnamed: 6,PORTS,NAMES
+0,c9b05476b757,juniper/openjnpr-container-vmx,"""/launch.sh""",43 hours,ago,Exited,(137) 42 hours ago,,jlab_vmx1_1
+1,e0c00fa94537,juniper/openjnpr-container-vmx,"""/launch.sh""",45 hours,ago,Exited,(1) 45 hours ago,,clever_zhukovsky
+2,cf7137f045cf,juniper/openjnpr-container-vmx,"""/launch.sh""",45 hours,ago,Exited,(1) 45 hours ago,,zealous_minsky
+3,46de18eb5d93,juniper/openjnpr-container-vmx,"""/launch.sh""",45 hours,ago,Exited,(1) 45 hours ago,,hopeful_jang
