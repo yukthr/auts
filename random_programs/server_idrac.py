@@ -49,7 +49,7 @@ def poweron():
         sys.exit(1)
     elif 'OFF' in str(output_read):
         logging.info('\n****Powering on System! Hold on  ****')
-        stdin, stdout, stderr = client.exec_command('racadm serveraction poweron')
+        stdin, stdout, stderr = client.exec_command('racadm serveraction powerup')
         output_poweron = stdout.read()
         logging.info(str(output_poweron))
     else:
