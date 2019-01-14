@@ -147,7 +147,10 @@ racadm serveraction powercycle
                                                    Server power operation successful
 
 
-
+# NodeMCU commands
+#
+# ampy --port /dev/ttyUSB0 put soil.py
+#rshell --buffer-size=30 -p /dev/ttyUSB0
 
 
 
