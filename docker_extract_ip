@@ -1,0 +1,46 @@
+"""
+This script extracts the current running image names and gets the IP Address from the docker inspect command
+"""
+
+
+import os
+import pandas as pd
+import json
+json_files = []
+live_routers = []
+
+def create_dockerun():
+    os.system('rm -rf dockerrun.txt')
+    os.system('docker ps > dockerrun.txt')
+
+def read_and_convert():
+    text_read = pd.read_fwf('dockerrun.txt')
+    text_read.to_csv('dockerrun.csv')
+    pd_readfile = pd.read_csv('dockerrun.csv')
+    return pd_readfile
+
+def create_json(f):
+    for i in f['NAMES']:
+         live_routers.append(i)
+         os.system('rm -rf docker_json_{}'.format(i))
+         os.system('docker inspect {} > docker_json_{}'.format(i,i))
+         json_files.append('docker_json_{}'.format(i))
+
+def extract_ip():
+    for i,j in zip(json_files,live_routers):
+        with open(i,'r') as file:
+            json_file = json.load(file)
+            print('Ip address for router {} - {}'.format(j,json_file[0]['NetworkSettings']['IPAddress']))
+create_dockerun()
+create_json(read_and_convert())
+extract_ip()
+
+"""
+output 
+
+r@r:~$ sudo python3 docker_extract_ip.py
+Ip address for router r3 - 172.17.0.2
+Ip address for router r2 - 172.17.0.4
+Ip address for router r1 - 172.17.0.3
+
+"""
