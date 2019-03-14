@@ -1,0 +1,5 @@
+set security nat source pool src-nat-pool-3 address {{  pu_ip }}
+set security nat source rule-set rs1 rule r1 match source-address {{ pi_ip }}
+set security nat source rule-set rs1 rule r1 match destination-address 8.8.8.8
+set security nat source rule-set rs1 rule r1 then source-nat pool src-nat-pool-3
+

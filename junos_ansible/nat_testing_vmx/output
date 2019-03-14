@@ -1,0 +1,13 @@
+{
+    "changed": true, 
+    "diff": "\n[edit security nat source pool src-nat-pool-3 address]\n       77.0.0.10/32 { ... }\n+      57.0.0.34/32;\n", 
+    "diff_lines": [
+        "", 
+        "[edit security nat source pool src-nat-pool-3 address]", 
+        "       77.0.0.10/32 { ... }", 
+        "+      57.0.0.34/32;"
+    ], 
+    "failed": false, 
+    "file": "final_config_2019-02-07T09:41:39.043797", 
+    "msg": "Configuration has been: opened, loaded, checked, diffed, committed, closed."
+}

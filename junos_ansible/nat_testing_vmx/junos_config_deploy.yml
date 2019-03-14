@@ -1,0 +1,27 @@
+---
+-
+  connection: local
+  gather_facts: false
+  hosts: mx
+  name: "This is to do a simple commit check! operation on Device"
+  roles:
+    - Juniper.junos
+  tasks:
+    -
+      name: "commit check"
+      juniper_junos_config:
+        host={{ inventory_hostname }}
+        username=lab
+        passwd=lab123
+        port=830
+        load='set'
+        src='test.conf'
+        commit=no
+        diff=True
+        confirmed=1
+      register: junos
+    -
+      name: "Output"
+      debug:
+              var: junos
+    - local_action: copy content={{ junos | to_nice_json }} dest=output
