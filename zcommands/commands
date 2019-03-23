@@ -153,6 +153,8 @@ racadm serveraction powercycle
 #rshell --buffer-size=30 -p /dev/ttyUSB0
 
 
+#To adjust the brightness of the RPI 
+#echo n > /sys/class/backlight/rpi_backlight/brightness
 
 
 
