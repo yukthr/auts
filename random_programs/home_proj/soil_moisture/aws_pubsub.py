@@ -65,7 +65,7 @@ if args.useWebsocket and not args.port:  # When no port override for WebSocket, 
     port = 443
 if not args.useWebsocket and not args.port:  # When no port override for non-WebSocket, default to 8883
     port = 8883
-
+"""
 # Configure logging
 logger = logging.getLogger("AWSIoTPythonSDK.core")
 logger.setLevel(logging.DEBUG)
@@ -73,7 +73,7 @@ streamHandler = logging.StreamHandler()
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 streamHandler.setFormatter(formatter)
 logger.addHandler(streamHandler)
-
+"""
 # Init AWSIoTMQTTClient
 myAWSIoTMQTTClient = None
 if useWebsocket:
@@ -101,10 +101,13 @@ time.sleep(2)
 # Publish to the same topic in a loop forever
 
 def publish_aws(mqtt_message):
-    if args.mode == 'both' or args.mode == 'publish':
-        moisture_value = {}
-        moisture_value['moisture_value'] = mqtt_message
-        messageJson = json.dumps(moisture_value)
-        myAWSIoTMQTTClient.publish(topic, messageJson, 1)
-        if args.mode == 'publish':
-            print('Published topic %s: %s\n' % (topic, messageJson))
+    try:
+        if args.mode == 'both' or args.mode == 'publish':
+            #moisture_value = {}
+            #moisture_value['moisture_value'] = mqtt_message
+            messageJson = json.dumps(mqtt_message)
+            myAWSIoTMQTTClient.publish(topic, messageJson, 1)
+            if args.mode == 'publish':
+                print('Published topic %s: %s\n' % (topic, messageJson))
+    except:
+        publish_aws(message)
