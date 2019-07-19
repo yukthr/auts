@@ -6,9 +6,9 @@ app = Flask(__name__)
 def moisture_publish():
 
     req_data = request.get_json()
-    moisture_value = req_data['moisture_value']
-    publish_aws(moisture_value)
-    return "aws message has now been publiesh"
+    #moisture_value = req_data['moisture_value']
+    publish_aws(req_data)
+    return "aws message has now been published"
 
 if __name__ == "__main__":
-    app.run(debug=True,host='0.0.0.0')
+    app.run(debug=False,host='0.0.0.0')
