@@ -50,15 +50,14 @@ parser.add_argument("-M", "--message", action="store", dest="message", default="
                     help="Message to publish")
 
 args = parser.parse_args()
-host = 'x'
-rootCAPath = 'x'
-certificatePath = 'x'
-privateKeyPath = 'x'
+host = 'aem6lj2h0o713-ats.iot.eu-west-1.amazonaws.com'
+rootCAPath = '/home/pi/flask_server/root-CA.crt'
+certificatePath = '/home/pi/flask_server/raspberrypi4gb_mqtt.cert.pem'
+privateKeyPath = '/home/pi/flask_server/raspberrypi4gb_mqtt.private.key'
 port = args.port
 useWebsocket = args.useWebsocket
 clientId = args.clientId
 topic = 'checking/water'
-
 
 # Port defaults
 if args.useWebsocket and not args.port:  # When no port override for WebSocket, default to 443
@@ -94,9 +93,15 @@ myAWSIoTMQTTClient.configureMQTTOperationTimeout(5)  # 5 sec
 
 # Connect and subscribe to AWS IoT
 myAWSIoTMQTTClient.connect()
+
+"""
+I dont need to subscribe to any topics as of now
+
 if args.mode == 'both' or args.mode == 'subscribe':
     myAWSIoTMQTTClient.subscribe(topic, 1, customCallback)
 time.sleep(2)
+
+"""
 
 # Publish to the same topic in a loop forever
 
@@ -105,7 +110,8 @@ def publish_aws(mqtt_message):
         if args.mode == 'both' or args.mode == 'publish':
             #moisture_value = {}
             #moisture_value['moisture_value'] = mqtt_message
-            messageJson = json.dumps(mqtt_message)
+            #messageJson = json.dumps(mqtt_message)
+            messageJson = mqtt_message
             myAWSIoTMQTTClient.publish(topic, messageJson, 1)
             if args.mode == 'publish':
                 print('Published topic %s: %s\n' % (topic, messageJson))
