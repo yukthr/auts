@@ -19,7 +19,7 @@ def write_to_influx(dvalue):
             },
             "time": current_time,
             "fields":
-                dvalue,
+                dvalue, #This has to be in { ] brackets but since dictionary already has it, we are skipping it
         },]
     client.write_points(json_body)
     print("writtent to influx {}".format(dvalue))
