@@ -1,3 +1,4 @@
+
 from flask import Flask, request
 from aws_pubsub import publish_aws
 app = Flask(__name__)
@@ -11,15 +12,17 @@ def write_to_influx(dvalue):
     current_time = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     client = InfluxDBClient('192.168.0.151',8086)
     client.switch_database('moisture_value')
+    for key in dvalue.keys():
+        plant_name = key #This is required to make the JSON Body universal for all the plants.
     json_body = [
         {
             "measurement": "moisture_value",
             "tags": {
-            "name":"moisture_value_basil_bedroom",
+            "name": str(plant_name),
             },
             "time": current_time,
             "fields":
-                dvalue, #This has to be in { ] brackets but since dictionary already has it, we are skipping it
+                dvalue,
         },]
     client.write_points(json_body)
     print("writtent to influx {}".format(dvalue))
