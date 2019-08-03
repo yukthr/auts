@@ -4,7 +4,7 @@ Some frequent commands that i frequently forget ;)
 sed s/from/for/g <filname> will replace the word from with for 
 
 -------
-#Esxi 
+#Esxi commands
 
 1. List the inventory ID of the virtual machine with the command:
 vim-cmd vmsvc/getallvms |grep <vm name>
