@@ -11,7 +11,7 @@ i2c = I2C(-1, scl=Pin(5), sda=Pin(4))
 
 
 def post_to_slack(message):
-    url = "https://hooks.slack.com/services/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"
+    url = "Ur Slack URL"
 
     payload = "{\"text\":\"" + message + "\"}"
     headers = {
