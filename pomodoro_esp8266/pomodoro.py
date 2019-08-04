@@ -45,8 +45,9 @@ def pomodoro_timer():
                     post_to_slack("5M Break")
                 time.sleep(60)
         else:
-            post_to_slack("15M Break")
             for l in range(15):
+                if l == 0:
+                    post_to_slack("15M Break")
                 oled_width = 128
                 oled_height = 64
                 oled = ssd1306.SSD1306_I2C(oled_width, oled_height, i2c)
