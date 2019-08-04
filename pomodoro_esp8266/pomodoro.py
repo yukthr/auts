@@ -23,16 +23,16 @@ def post_to_slack(message):
 def pomodoro_timer():
     for j in range(6):
         if j < 5:
-            for i in range(25):
-                oled_width = 128
-                oled_height = 64
-                oled = ssd1306.SSD1306_I2C(oled_width, oled_height, i2c)
-                wri = Writer(oled, courier, verbose=False)
-                Writer.set_textpos(oled, 14, 0)  # In case a previous test has altered this
-                wri.printstring('{} Mins '.format(25 - i))
-                wri.printstring('\n{}/5 Iters'.format(j+1))
-                oled.show()
-                time.sleep(60)
+            # for i in range(25):
+            #     oled_width = 128
+            #     oled_height = 64
+            #     oled = ssd1306.SSD1306_I2C(oled_width, oled_height, i2c)
+            #     wri = Writer(oled, courier, verbose=False)
+            #     Writer.set_textpos(oled, 14, 0)  # In case a previous test has altered this
+            #     wri.printstring('{} Mins '.format(25 - i))
+            #     wri.printstring('\n{}/5 Iters'.format(j+1))
+            #     oled.show()
+            #     time.sleep(60)
             for k in range(5):
                 oled_width = 128
                 oled_height = 64
