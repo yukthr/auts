@@ -22,7 +22,7 @@ def post_to_slack(message):
 
 def pomodoro_timer():
     for j in range(6):
-        if j < 5:
+        if j < 1:
             # for i in range(25):
             #     oled_width = 128
             #     oled_height = 64
