@@ -1,0 +1,12 @@
+CHANGELOG.txt
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+bme680/__init__.py
+bme680/constants.py
+bme680.egg-info/PKG-INFO
+bme680.egg-info/SOURCES.txt
+bme680.egg-info/dependency_links.txt
+bme680.egg-info/top_level.txt

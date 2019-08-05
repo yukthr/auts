@@ -1,0 +1,8 @@
+Display Temperature, Pressure and Humidity
+
+If you don't need gas readings, then you can read temperature,
+pressure and humidity quickly.
+
+Press Ctrl+C to exit
+
+
