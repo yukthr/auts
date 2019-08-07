@@ -1,1 +1,1 @@
-/usr/local/bin/python3 /home/pi/iot/aws-iot-device-sdk-python/samples/basicPubSub/basicPubSub.py -e aem6lj2h0o713-ats.iot.us-east-1.amazonaws.com -r /home/pi/iot/root-CA.crt -c /home/pi/iot/raspberrypioffice.cert.pem -k /home/pi/iot/raspberrypioffice.private.key
+awspub_server.py -e aem6lj2h0o713-ats.iot.us-east-1.amazonaws.com -r root-CA.crt -c raspberrypioffice.cert.pem -k raspberrypioffice.private.key
