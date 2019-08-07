@@ -37,7 +37,7 @@ racadm serveraction powercycle
 def poweron():
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.WarningPolicy)
-    client.connect(hostname='192.168.0.94',port='22',username='root',password='openseseme',look_for_keys=False)
+    client.connect(hostname='192.168.0.95',port='22',username='root',password='openseseme',look_for_keys=False)
     stdin,stdout,stderr = client.exec_command('racadm serveraction powerstatus')
     output_read = stdout.read()
     if 'ON' in str(output_read):

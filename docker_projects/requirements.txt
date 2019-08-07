@@ -1,1 +1,2 @@
 AWSIoTPythonSDK
+paramiko
