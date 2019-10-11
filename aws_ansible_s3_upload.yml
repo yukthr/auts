@@ -24,3 +24,7 @@
         object: /home_{{ temp }}.tgz
         src: /home/pi/home_{{ temp }}.tgz
         
+    - name: Delete the Folder after the upload
+      file:
+        path: /home/pi/home_{{ temp }}.tgz
+        state: absent 
