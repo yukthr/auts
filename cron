@@ -1,0 +1,7 @@
+@reboot sudo docker start influxdb
+@reboot sudo docker start grafana
+@reboot sudo docker start flaskserver
+@reboot sudo docker start vmwarepoweron
+@reboot sudo docker start netdata
+@reboot sudo docker start plex
+20 16 * * * ansible-playbook /home/pi/aws_ansible_s3_upload.yml
