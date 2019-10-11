@@ -1,0 +1,26 @@
+- hosts: localhost
+  gather_facts: no
+  vars_files:
+    - keys.yml
+  vars:
+    UNIQUE_BUCKET_NAME: dockervolumesfrompi
+  tasks:
+
+    - name: new variable with current date time
+      set_fact: temp="{{lookup('pipe','date \"+%Y-%m-%d %H:%M\"')}}"
+  
+    - name: Archive folder pi for DOCKERVOLUME BACKUP
+      archive:
+        path: /home/pi/home
+        dest: /home/pi/home_{{ temp }}.tgz
+
+    - name: Upload docker volume directory to AWS
+      aws_s3:
+        aws_access_key: "{{ AWS_ACCESS_KEY_ID }}"
+        aws_secret_key: "{{ AWS_SECRET_ACCESS_KEY }}"
+        ec2_region: "{{ AWS_REGION }}"
+        bucket: "{{ UNIQUE_BUCKET_NAME }}"
+        mode: put
+        object: /home_{{ temp }}.tgz
+        src: /home/pi/home_{{ temp }}.tgz
+        
