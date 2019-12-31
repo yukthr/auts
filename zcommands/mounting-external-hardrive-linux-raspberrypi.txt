@@ -1,0 +1,17 @@
+
+1. Make a folder, called, for example /media/external:
+Code:
+sudo mkdir /media/external
+2. Make yourself the owner of this folder:
+Code:
+sudo chown -R $(id -u):$(id -u) /media/external
+3. Add a line to your /etc/fstab like the following:
+Code:
+/dev/sdb1 /media/external ntfs rw,nosuid,nodev,default_permissions 0 0
+
+A more complicated, but also more correct way is to use
+Code:
+sudo blkid
+command that outputs UUIDs for all partitions. Then in your fstab file you can refer to a partition by its unique ID. For example:
+Code:
+UUID=f1ff7651-b02f-4d05-907a-fe4990fd3d14 /media/external ntfs rw,nosuid,nodev,default_permissions 0 0
