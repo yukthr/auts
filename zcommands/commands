@@ -156,9 +156,9 @@ racadm serveraction powercycle
 #To adjust the brightness of the RPI 
 #echo n > /sys/class/backlight/rpi_backlight/brightness
 
+To get current public ip in terminal
 
-
-
+alias whatismyip='wget -qO- http://ipecho.net/plain ; echo'
 
 
 
