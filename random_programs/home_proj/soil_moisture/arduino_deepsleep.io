@@ -6,7 +6,7 @@
 
 // Replace with your SSID and Password
 const char* ssid     = "R-VMVMVM";
-const char* password = "Himaja@1992";
+const char* password = "somepassword";
 ESPDailyTask dailyTask(8*60); // 8 AM 
 
 
