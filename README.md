@@ -29,3 +29,6 @@ CI / CD
 
 - Travis 
 - Jenkins2
+
+[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14)
+
