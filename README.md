@@ -30,5 +30,5 @@ CI / CD
 - Travis 
 - Jenkins2
 
-[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14)
+<script src="https://asciinema.org/a/14.js" id="asciicast-14" async></script>
 
