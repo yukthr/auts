@@ -53,7 +53,7 @@ gce_eve.stop_instance(service, 'glossy-surge-276114', 'europe-west1-b', instace=
 gce_eve.start_instance(service, 'glossy-surge-276114', 'europe-west1-b', instace='eve-ng-pro')
 gce_eve.list_instances(service, 'glossy-surge-276114', 'europe-west1-b')
  
-
+"""
 
 
 
