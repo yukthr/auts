@@ -1,0 +1,2 @@
+gcloud                                                                                                               │
+google-api-python-client
