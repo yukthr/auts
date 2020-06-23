@@ -1,0 +1,4 @@
+sudo docker tag 9b1fbe480b6f rmadupu/rmadupu:gce_ebpf
+sudo docker push rmadupu/rmadupu:gce_ebpf
+
+
