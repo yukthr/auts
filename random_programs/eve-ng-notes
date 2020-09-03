@@ -1,0 +1,32 @@
+manual steps 
+
+1. create and download credentials.json file 
+2. enable billing on the account and upgrade the billing
+3. change quotas to 32 vcpus in europe-west2-a
+
+
+
+in the docker shell ( where all the files along with credentials.json is located, run the below commands)
+
+gcloud init 
+gcloud projects create gceeve
+gcloud config set project gceeve
+gcloud compute images create nested-ubuntu-bionic --source-image-family=ubuntu-1804-lts --source-image-project=ubuntu-os-cloud --licenses https://www.googleapis.com/compute/v1/projects/vm-options/global/licenses/enable-vmx
+
+
+""" output should have READY for programming logic """ 
+Created [https://www.googleapis.com/compute/v1/projects/gceeve/global/images/nested-ubuntu-bionic].
+NAME                  PROJECT  FAMILY  DEPRECATED  STATUS
+nested-ubuntu-bionic  gceeve                       READY
+
+gcloud compute instances create gceeve --machine-type=n2-standard-16 --image-project=gceeve --image=nested-ubuntu-bionic --boot-disk-size=60GB --boot-disk-type=pd-ssd --can-ip-forward --zone=europe-west2-a
+
+
+
+
+gcloud compute firewall-rules create ingresseve --allow=tcp:0-65535,icmp --direction=INGRESS  --source-ranges="0.0.0.0/0" 
+gcloud compute firewall-rules create egresseve --allow=tcp:0-65535,icmp --direction=EGRESS  --source-ranges="0.0.0.0/0" 
+
+
+ssh into instance and download all the s3 related files for eve to proceed with the setup 
+
