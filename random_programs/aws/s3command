@@ -1,0 +1,4 @@
+aws s3 sync s3://evengrakesh .  # make sure its empty directory for in this use-case.
+
+
+https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html#using-s3-commands-managing-objects-sync
