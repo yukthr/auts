@@ -1,0 +1,16 @@
+network:
+        version: 2
+        renderer: networkd
+        ethernets:
+                ens5:
+                        dhcp4: no
+                        addresses: [172.29.129.100/24]
+                        gateway4: 172.29.129.254
+                        nameservers:
+                                addresses: [8.8.8.8]
+                ens3:
+                        dhcp4: no
+                        addresses: [192.168.5.100/24]
+                ens4:
+                        dhcp4: no
+                        addresses: [192.168.4.100/24]
