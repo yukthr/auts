@@ -178,3 +178,7 @@ find . -type f -name "*.mkv" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -vn -
 
 
 sudo pmset -a disablesleep 1 - will allow mac not sleep on lid closed as well. 
+
+# copies all images into a media file
+
+cat *.jpg | ffmpeg -f image2pipe -r 1 -vcodec mjpeg -i - -vcodec libx264 out.mp4
